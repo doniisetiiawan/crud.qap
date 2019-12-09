@@ -11,6 +11,7 @@
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -20,3 +21,5 @@ Route::get('about', function () {
 });
 
 Route::get('contact', [\App\Http\Controllers\PagesController::class, 'contact']);
+
+Route::resource('users', UserController::class)->except(['show']);
